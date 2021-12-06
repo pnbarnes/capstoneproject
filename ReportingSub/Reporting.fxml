@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="633.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReportingSub.ReportingController">
+   <children>
+      <Label layoutX="341.0" layoutY="14.0" text="ISMS Reporting System" />
+      <TabPane layoutX="54.0" layoutY="42.0" prefHeight="563.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Sales Trend Report">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <DatePicker fx:id="trendFrom" layoutX="61.0" layoutY="31.0" />
+                        <DatePicker fx:id="trendTo" layoutX="287.0" layoutY="31.0" />
+                        <ChoiceBox fx:id="trendGender" layoutX="552.0" layoutY="31.0" prefHeight="25.0" prefWidth="103.0" />
+                        <Label layoutX="18.0" layoutY="35.0" text="From*" />
+                        <Label layoutX="261.0" layoutY="35.0" text="To*" />
+                        <Label layoutX="499.0" layoutY="35.0" text="Gender" />
+                        <Label layoutX="18.0" layoutY="5.0" text="*Required" />
+                        <TableView fx:id="trendReport" layoutX="21.0" layoutY="112.0" prefHeight="248.0" prefWidth="655.0" />
+                        <Button layoutX="323.0" layoutY="77.0" mnemonicParsing="false" onAction="#getSalesTrendReport" text="Create report" />
+                        <Label fx:id="trendMsg" layoutX="47.0" layoutY="81.0" textFill="#ea0303" />
+                        <Button layoutX="596.0" layoutY="380.0" mnemonicParsing="false" onAction="#printTrendReport" text="Print Report" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Refill Report">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="fullStack" layoutX="155.0" layoutY="30.0" prefHeight="25.0" prefWidth="56.0" />
+                        <Label layoutX="95.0" layoutY="34.0" text="Full Stack:" />
+                        <Label layoutX="253.0" layoutY="34.0" text="UPC:" />
+                        <TextField fx:id="UPC" layoutX="292.0" layoutY="30.0" />
+                        <Label layoutX="479.0" layoutY="34.0" text="# on Floor:" />
+                        <TextField fx:id="numOnFloor" layoutX="543.0" layoutY="30.0" prefHeight="25.0" prefWidth="60.0" />
+                        <Button layoutX="284.0" layoutY="81.0" mnemonicParsing="false" onAction="#addToRefillReport" text="Add item" textFill="#1c1c1c" />
+                        <Button layoutX="358.0" layoutY="81.0" mnemonicParsing="false" onAction="#getRefillReport" text="View report" />
+                        <TableView fx:id="refillReport" layoutX="127.0" layoutY="124.0" prefHeight="217.0" prefWidth="460.0" />
+                        <Button layoutX="127.0" layoutY="353.0" mnemonicParsing="false" onAction="#resetRefillReport" text="Reset Report" />
+                        <Button layoutX="508.0" layoutY="353.0" mnemonicParsing="false" onAction="#printRefillReport" text="Print Report" />
+                        <Label fx:id="refillMsg" layoutX="57.0" layoutY="85.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Report Visualization">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="697.0">
+                     <children>
+                        <BarChart fx:id="visualChart" layoutX="102.0" layoutY="106.0" prefHeight="359.0" prefWidth="493.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <RadioButton fx:id="byCategory" layoutX="28.0" layoutY="30.0" mnemonicParsing="false" text="By category" />
+                        <RadioButton fx:id="bySeason" layoutX="140.0" layoutY="30.0" mnemonicParsing="false" text="By season" />
+                        <ChoiceBox fx:id="visualGender" layoutX="313.0" layoutY="26.0" prefHeight="25.0" prefWidth="95.0" />
+                        <Label layoutX="256.0" layoutY="30.0" text="Gender:" />
+                        <DatePicker fx:id="visualFrom" layoutX="491.0" layoutY="13.0" />
+                        <DatePicker fx:id="visualTo" layoutX="491.0" layoutY="59.0" />
+                        <Label layoutX="457.0" layoutY="17.0" text="From" />
+                        <Label layoutX="464.0" layoutY="63.0" text="To" />
+                        <Button layoutX="305.0" layoutY="72.0" mnemonicParsing="false" onAction="#getReportVisualization" text="Create report" />
+                        <Label fx:id="visualMsg" layoutX="69.0" layoutY="76.0" textFill="#f30d0d" />
+                        <Button layoutX="498.0" layoutY="465.0" mnemonicParsing="false" onAction="#printVisualReport" text="Print Report" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

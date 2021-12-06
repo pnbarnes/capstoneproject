@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StockInterface.SARAController">
+   <children>
+      <Label layoutX="21.0" layoutY="25.0" prefHeight="49.0" prefWidth="578.0" text="This interface models the process of the SARA interacting with the ISMS when stock receipt occurs." />
+      <TextField fx:id="UPC" layoutX="120.0" layoutY="99.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter UPC " />
+      <Label layoutX="76.0" layoutY="103.0" text="UPC" />
+      <Button fx:id="stockButton" layoutX="278.0" layoutY="247.0" mnemonicParsing="false" onAction="#SARAUpdate" text="Add Stock" />
+      <Label fx:id="message" layoutX="131.0" layoutY="285.0" prefHeight="17.0" prefWidth="433.0" textFill="#410def" />
+      <Label layoutX="366.0" layoutY="99.0" prefHeight="25.0" prefWidth="209.0" text="Try with UPC: 1910487554" />
+      <Label layoutX="76.0" layoutY="164.0" text="Quantity Received" />
+      <TextField fx:id="quantity" layoutX="193.0" layoutY="160.0" prefHeight="25.0" prefWidth="97.0" promptText="Enter Quantity" />
+   </children>
+</AnchorPane>
